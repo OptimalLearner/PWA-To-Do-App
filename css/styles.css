@@ -1,0 +1,402 @@
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	height: 100vh;
+	width: 100vw;
+	overflow-x: hidden;
+}
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #eee;
+}
+::-webkit-scrollbar-thumb {
+  background: #aaa;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/* Loader styles */
+.loaderPart {
+	height: 100%;
+	width: 100%;
+	background-color: #7a7adb;
+	overflow-x: hidden;
+}
+.loader {
+	width: 150px;
+	text-align: center;
+}
+.loader > div {
+	width: 25px;
+	height: 25px;
+	background-color: #FFF;
+	border-radius: 50%;
+	display: inline-block;
+	-webkit-animation: delay 1s infinite ease-in-out both;
+	animation: delay 1s infinite ease-in-out both;
+}
+.loader .round1 {
+	-webkit-animation-delay: -0.30s;
+	animation-delay: -0.30s;
+}
+.loader .round2 {
+	-webkit-animation-delay: -0.15s;
+	animation-delay: -0.15s;
+}
+@keyframes delay {
+	0%, 80%, 100% {
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	} 40% {
+		-webkit-transform: scale(1.0);
+		transform: scale(1.0);
+	}
+}
+/* Main page styles */
+.mainPart {
+	display: none;
+	min-height: 100vh;
+	width: 100%;
+	font-family: 'Varela Round', sans-serif;
+	overflow-x: hidden;
+}
+.mainPart .navbar {
+	width: 100%;
+}
+.mainPart .navbar .brand-name {
+	padding: 20px 0 0;
+	text-align: center;
+	font-family: 'Righteous', cursive;
+	font-size: 40px;
+}
+.mainPart .navbar .github {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	padding: 7px 10px;
+	font-size: 15px;
+	background-color: #7a7adb;
+	color: #FFF;
+	border-radius: 10px;
+}
+.mainPart .navbar .github .github-link {
+	text-decoration: none;
+	color: #FFF;
+}
+.mainPart .info {
+	width: 100%;
+	min-height: 85%;
+	padding: 80px 0 30px;
+}
+.mainPart .info .icon1 {
+	font-size: 150px;
+	color: #7a7adb;
+	padding: 0 0 30px;
+}
+.mainPart .info .msg h2 {
+	font-size: 29px;
+	text-align: center;
+	padding: 10px;
+}
+.mainPart .info .msg h3 {
+	font-size: 20px;
+	text-align: center;
+	padding: 15px 10px 25px;
+}
+.mainPart .info .btn1, .todoPart .upper .addSection .inputGroup .addTaskBtn {
+	font-family: 'Varela Round', sans-serif;
+	font-size: 20px;
+	text-align: center;
+	margin: 45px 0 0;
+	padding: 9px 25px;
+	background-color: #7a7adb;
+	color: #FEFEFE;
+	border: none;
+	border-radius: 10px;
+	outline: none;
+	cursor: pointer;
+}
+.mainPart .footer {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	font-size: 18px;
+	text-align: center;
+}
+/* To-do list page styles */
+.todoPart {
+	display: none;
+	width: 100vw;
+	min-height: 100vh;
+	font-family: 'Varela Round', sans-serif;
+}
+.todoPart .upper {
+	width: 100vw;
+	height: 25vh;
+	background-color: #7a7adb;
+	overflow: auto;
+}
+.todoPart .upper .today {
+	margin: 20px;
+	font-size: 21px;
+	color: #FFF;
+	font-weight: 700;
+}
+.todoPart .upper .github {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	padding: 8px 10px;
+	font-size: 16px;
+	background-color: #FFF;
+	color: #7a7adb;
+	border-radius: 10px;
+}
+.todoPart .upper .github .github-link {
+	text-decoration: none;
+	color: #7a7adb;
+}
+.todoPart .upper .addSection {
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 50%;
+	padding: 2%;
+	background-color: #FFF;
+	box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.75);
+	font-family: 'Varela Round', sans-serif;
+}
+.todoPart .upper .addSection .inputHeading {
+	font-size: 20px;
+}
+.todoPart .upper .addSection .inputGroup {
+	width: 100%;
+}
+.todoPart .upper .addSection .inputGroup #input-note {
+	width: 82%;
+	margin: 20px 0;
+	padding: 7px 15px;
+}
+.todoPart .upper .addSection .inputGroup #input-note:focus {
+	border: 2px solid #7a7adb;
+	outline: none !important;
+}
+.todoPart .upper .addSection .inputGroup .addTaskBtn {
+	margin: 0 5px;
+	padding: 5px 20px;
+	border-radius: 0;
+}
+.todoPart .lower .todoContainer {
+	margin: 8% auto 0;
+	width: 54%;
+	background-color: #FFF;
+	border-radius: 2px;
+	font-family: 'Varela Round', sans-serif;
+	max-height: 50vh;
+}
+.todoPart .lower .todoContainer .todoList {
+	padding: 0;
+	padding-bottom: 10px;
+}
+.todoPart .lower .todoContainer .todoList .todo-add {
+	width: 100%;
+	box-shadow: 0 0 2px 2px #AEAEAE;
+	margin: 15px 0;
+}
+.todoPart .lower .todoContainer .todoList .todo-add > div {
+	display: inline-block;
+	background-color: #7a7adb;
+	color: #FFF;
+	padding: 10px 0;
+	cursor: pointer;
+}
+.todoPart .lower .todoContainer .todoList .todo-add .check {
+	width: 5%;
+	text-align: center;
+}
+.todoPart .lower .todoContainer .todoList .todo-add .todoNote {
+	max-width: 75%;
+	padding: 0 0 0 3%;
+	background-color: #FFF;
+	color: #111;
+	cursor: default;
+}
+.todoPart .lower .todoContainer .todoList .todo-add .edit {
+	width: 6%;
+	text-align: center;
+	float: right;
+}
+.todoPart .lower .todoContainer .todoList .todo-add .delete {
+	width: 6%;
+	text-align: center;
+	float: right;
+	border-left: 1px solid #505050;
+}
+.fa-check, .fa-trash-alt, .fa-pen {
+	pointer-events: none;
+}
+.done {
+	text-decoration: line-through;
+	opacity: 0.2;
+}
+/* Custom edit and delete alert box styles */
+.overlay1, .overlay2 {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.3);
+	transition: background-color 1s;
+	z-index: 10;
+	display: none;
+}
+.deleteAlertBox, .updateAlertBox {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 40vw;
+	height: 25vh;
+}
+.deleteAlertBox .deleteHeader, .updateAlertBox .updateHeader {
+	width: 100%;
+	height: 40%;
+	background-color: #7a7adb;
+	color: #FFF;
+	font-size: 30px;
+	text-align: center;
+}
+.deleteAlertBox .deleteBody, .updateAlertBox .updateBody  {
+	width: 100%;
+	height: 60%;
+	background-color: #FFF;
+	color: #111;
+	font-size: 21px;
+	text-align: center;
+	padding: 10px 0 20px 0;
+}
+.updateAlertBox .updateBody input {
+	width: 82%;
+	margin: 15px 0;
+	padding: 7px 15px;
+}
+.updateAlertBox .updateBody input:focus {
+	border: 2px solid #7a7adb;
+	outline: none !important;
+}
+.deleteAlertBox .deleteBody .button-group, .updateAlertBox .updateBody .button-group {
+	padding: 15px 0 0;
+	width: 100%;
+}
+.deleteAlertBox .deleteBody .button-group button, .updateAlertBox .updateBody .button-group button {
+	background-color: #7a7adb;
+	color: #FFF;
+	font-size: 18px;
+	width: 20%;
+	padding: 5px 10px;
+	border: none;
+	cursor: pointer;
+}
+/* Styles for smaller screens */
+@media only screen and (max-width: 640px) {
+	.mainPart .navbar .github, .todoPart .upper .github {
+		font-size: 20px;
+		padding: 7px 8px 5px;
+		border-radius: 50%;
+	}
+	.mainPart .navbar .github span, .todoPart .upper .github span {
+		display: none;
+	}
+	.mainPart .info .msg h2 {
+		font-size: 24px;
+	}
+	.lower{
+		margin: 90px 0 0;
+	}
+	.todoPart .lower .todoContainer {
+		width: 90%;
+	}
+	.todoPart .lower .todoContainer .todoList .todo-add .check, .todoPart .lower .todoContainer .todoList .todo-add .edit, .todoPart .lower .todoContainer .todoList .todo-add .delete {
+		width: 10%;
+	}
+	.deleteAlertBox, .updateAlertBox {
+		width: 90vw;
+		min-height: 30vh;
+	}
+	.deleteAlertBox .deleteBody span, .updateAlertBox .updateBody span {
+		padding: 10px 10px 20px 10px;
+	}
+	.deleteAlertBox .deleteBody .button-group button, .updateAlertBox .updateBody .button-group button {
+		width: 35%;
+	}
+}
+@media only screen and (max-height: 700px) {
+	.mainPart .info {
+		padding: 40px 0 20px;
+	}
+	.mainPart .info .icon1 {
+		font-size: 110px;
+		padding: 0;
+	}
+	.mainPart .info .btn1, .todoPart .upper .addSection .inputGroup .addTaskBtn {
+		margin: 0;
+	}
+}
+@media only screen and (max-width: 1080px) {
+	.todoPart .upper .addSection {
+		width: 85%;
+		top: 17.5%;
+	}
+}
+@media only screen and (orientation: landscape) and (max-height: 540px) {
+	.todoPart .lower .todoContainer .todoList {
+		margin: 120px 0 0;
+	}
+	.todoPart .lower .todoContainer .todoList .todo-add .check, .todoPart .lower .todoContainer .todoList .todo-add .delete,
+	.todoPart .lower .todoContainer .todoList .todo-add .edit {
+		width: 10%;
+	}
+	.deleteAlertBox, .updateAlertBox {
+		width: 50vw;
+		height: 30vh;
+	}
+	.deleteAlertBox .deleteHeader, .updateAlertBox .updateHeader {
+		height: 50%;
+		font-size: 25px;
+	}
+	.deleteAlertBox .deleteBody, .updateAlertBox .updateBody {
+		padding: 30px 0;
+		font-size: 17px;
+	}
+	.deleteAlertBox .deleteBody span, .updateAlertBox .updateBody span {
+		padding: 0;
+	}
+	.deleteAlertBox .deleteBody .button-group button, .updateAlertBox .updateBody .button-group button {
+		width: 25%;
+	}
+}
+/* custom css styles classes */
+.d-flex {
+	display: flex;
+}
+.justify-center {
+	justify-content: center;
+}
+.align-items-center {
+	align-items: center;
+}
+.row-flex {
+	flex-direction: row;
+}
+.column-flex {
+	flex-direction: column;
+}
+.flex {
+	flex: 1;
+}
